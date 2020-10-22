@@ -1,0 +1,12 @@
+@PACKAGE_INIT@
+include(CMakeFindDependencyMacro)
+find_dependency(schnapps_core REQUIRED)
+find_dependency(plugin_cmap_provider REQUIRED)
+find_dependency(cgogn_io REQUIRED)
+find_dependency(cgogn_modeling REQUIRED)
+find_dependency(cgogn_topology REQUIRED)
+find_dependency(cgogn_geometry REQUIRED)
+
+if(NOT TARGET schnapps::shallow_water_2)
+	include("${CMAKE_CURRENT_LIST_DIR}/plugin_shallow_water_2Targets.cmake")
+endif()
